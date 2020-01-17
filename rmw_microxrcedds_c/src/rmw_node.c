@@ -238,7 +238,7 @@ rmw_node_t * create_node(const char * name, const char * namespace_, size_t doma
 
 #elif defined(MICRO_XRCEDDS_UDP)
   // TODO(Borja) Think how we are going to select transport to use
-  if (!uxr_init_udp_transport(&node_info->transport, &node_info->udp_platform, UXR_IPv4, context->impl->connection_params.agent_address, context->impl->connection_params.agent_port)) {
+  if (!uxr_init_udp_transport(&node_info->transport, &node_info->udp_platform, UXR_IPv6, context->impl->connection_params.agent_address, context->impl->connection_params.agent_port)) {
     RMW_SET_ERROR_MSG("Can not create an udp connection");
     return NULL;
   }
